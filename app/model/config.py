@@ -1,0 +1,2 @@
+from app.model.llm_adapters.hugginface_inference_api import HuggingfaceInfereceApi
+llm_adapter = HuggingfaceInfereceApi

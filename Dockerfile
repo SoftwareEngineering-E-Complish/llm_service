@@ -12,8 +12,7 @@ COPY . /usr/src/app/
 
 EXPOSE 8888
 
-CMD ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8888 "]
+ENTRYPOINT ["uvicorn", "app.main:app"]
 
-
-
+CMD ["--host", "0.0.0.0", "--port", "8888 "]
 
