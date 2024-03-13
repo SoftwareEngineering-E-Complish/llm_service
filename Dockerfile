@@ -1,14 +1,14 @@
 FROM python:3.11
 
-WORKDIR /app
+WORKDIR /usr/src
 
 RUN pip install --upgrade pip
 
-COPY ./requirements.txt /usr/src/app/requirements.txt
+COPY ./requirements.txt /usr/src/requirements.txt
 
 RUN pip install -r requirements.txt
 
-COPY src /app/
+COPY app /usr/src/app/
 
 EXPOSE 8888
 

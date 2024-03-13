@@ -9,6 +9,7 @@ class OpenAiInference(ILlmAdapter):
         self.__client = OpenAI()
 
     def query_llm(self,  prompt: str, api_documentation:str) -> str: 
+        print(api_documentation)
         messages = [{"role": "user", "content": prompt}]
         completion = self.__client.chat.completions.create(
         model="gpt-3.5-turbo",
