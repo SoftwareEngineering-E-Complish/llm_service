@@ -3,7 +3,7 @@ from abc import ABC, abstractmethod
 
 class ILlmAdapter(ABC):
 
-    def __init__(model_identifier: str=None):
+    def __init__(self, model_identifier: str=None):
         pass
     
     @abstractmethod
