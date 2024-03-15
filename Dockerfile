@@ -12,6 +12,9 @@ COPY app /usr/src/app/
 
 COPY log_conf.yaml /usr/src/log_conf.yaml 
 
+RUN adduser -D nonroot
+USER nonroot
+
 USER nonroot
 
 EXPOSE 8888
