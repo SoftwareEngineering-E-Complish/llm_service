@@ -1,6 +1,5 @@
 from typing import Dict, Union
 from fastapi import APIRouter
-
 from app.services.llm_service import LlmService
 from app.utils.constants import API_DOCUMENTATION_KEY, QUERY_KEY
 
