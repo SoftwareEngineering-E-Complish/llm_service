@@ -4,7 +4,6 @@ skipsdist = True
  
 [testenv]
 deps =
-    pytest
     coverage
 commands =
     coverage run -m unittest discover -s tests
@@ -12,5 +11,4 @@ commands =
 
 [coverage:run]
 relative_files = True
-source = app/  
 branch = True
