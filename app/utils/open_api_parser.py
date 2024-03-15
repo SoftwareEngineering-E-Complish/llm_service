@@ -1,5 +1,5 @@
 import json
-from typing import Dict
+from typing import Dict, List, Tuple
 from app.utils.open_api_field import OpenApiField
 
 class Parser:
@@ -19,7 +19,7 @@ class Parser:
              "type": "object",
             "properties":  """ + json.dumps(properties) + """, "required" : """+ json.dumps(required) + """}}}""")
     
-    def __transform_format(self, content: Dict) -> Dict:
+    def __transform_format(self, content: Dict) -> Tuple[Dict, List]:
         properties: Dict[str,Dict] = content.pop(self.PROPERTIES_KEY)
         references = content.pop(self.REFERENCE_KEY, None)
         required = []

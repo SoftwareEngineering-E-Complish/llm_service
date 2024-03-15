@@ -12,6 +12,8 @@ COPY app /usr/src/app/
 
 COPY log_conf.yaml /usr/src/log_conf.yaml 
 
+USER nonroot
+
 EXPOSE 8888
 
 ENTRYPOINT ["uvicorn", "app.main:app","--log-config=log_conf.yaml" ]
