@@ -8,7 +8,7 @@ class LlmMapper:
  
     @staticmethod
     def map(model_identifier: str=None) -> ILlmAdapter: 
-        models  = {'openai': OpenAiInference()}
+        models  = {'openai': OpenAiInference}
         if not model_identifier in models:
             raise NotImplementedError(f'{model_identifier} not implemented yet')
         return models[model_identifier]

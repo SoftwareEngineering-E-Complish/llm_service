@@ -12,9 +12,14 @@ COPY app /usr/src/app/
 
 COPY log_conf.yaml /usr/src/log_conf.yaml 
 
+RUN useradd -m appuser
+
+RUN chown -R appuser:appuser /usr/src
+
+USER appuser
 
 EXPOSE 8888
 
-ENTRYPOINT ["uvicorn", "app.main:app","--log-config=log_conf.yaml" ]
+ENTRYPOINT ["uvicorn", "app.main:app","--log-config=log_conf.yaml"]
 
 CMD ["--host", "0.0.0.0", "--port", "8888 "]

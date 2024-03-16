@@ -8,7 +8,7 @@ from app.config import llm_inference_model
 
 class LlmService:
     def __init__(self):
-        self.__llm_adapter = LlmMapper.map(llm_inference_model)
+        self.__llm_adapter = LlmMapper.map(llm_inference_model)()
         self.__open_api_parser = Parser()
 
     def create_query(self, prompt, api_documentation) -> LlmResponseDto:

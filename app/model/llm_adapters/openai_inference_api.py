@@ -1,15 +1,15 @@
 
 import json
-import os
-from app.model.llm_adapters.i_llm_adapter import ILlmAdapter
 from openai import OpenAI
+from app.model.llm_adapters.i_llm_adapter import ILlmAdapter
+
 
 class OpenAiInference(ILlmAdapter):
 
     def __init__(self):
         self.__client = OpenAI()
 
-    def query_llm(self,  prompt: str, api_documentation:dict) -> str: 
+    def query_llm(self, prompt: str, api_documentation:dict) -> str: 
         if not isinstance(api_documentation, dict):
             raise TypeError('api documentation should be type dict')
         messages = [{"role": "user", "content": prompt}]
