@@ -15,37 +15,37 @@ The `llm_service` is a FastAPI service that uses OpenAI's Language Model (LLM) t
 
 ### Installation
 # install dependencies
-‘‘‘bash
+```bash
 pip install -r requirements.txt
-‘‘‘
+```
 # set OpenAI api key as environment variable
-‘‘‘bash
+```bash
 export OPENAI_API_KEY={your openai key}
 
-‘‘‘
+```
 OPTIONAL FOR TESTING set constant response mode like this it will always return the same query and you dont need the openai token
 
-‘‘‘bash
+```bash
 export TEST_MODE=constant_response
-‘‘‘
+```
 # run llm service
-‘‘‘bash
+```bash
 uvicorn app.main:app --log-config=log_conf.yaml --port 8888
-‘‘‘
+```
 
 
 
 ### Intallation with docker
 # build image
 From root directory
-‘‘‘bash
+```bash
 docker build -t llm_service .
-‘‘‘
+```
 
 # run image on port 8888
-‘‘‘bash
+```bash
 docker run -e OPENAI_API_KEY={your OpenAI api key} -p 8888:8888 llm_service
-‘‘‘
+```
 
 # run image on port 8888 for Testing with constant response
 docker run -e TEST_MODE=constant_response -p 8888:8888 llm_service
